@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .container{
+            position:relative;
+            width:100%;
+            height:100vh;
+        }
+        button{
+        
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            font-size: 1.3rem;
+            cursor: pointer;
+            height:40px;
+            width:120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            color:#fff;
+            border-radius: 4px;
+            border:none;
+            box-shadow: -1px 1px 4px 1px #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button>Click me</button>
+    </div>
+    <script>
+
+        const button = document.querySelector('button')
+        const container = document.querySelector('.container')
+        button.addEventListener('click',()=>{
+            const col1  = Math.floor(Math.random()*256)
+            const col2  = Math.floor(Math.random()*256)
+            const col3  = Math.floor(Math.random()*256)
+
+            container.style.backgroundColor = `rgb(${col1},${col2},${col3})`
+        })
+    </script>
+</body>
+</html>
